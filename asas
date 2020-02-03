@@ -1,0 +1,52 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 03.02.2020 11:07:32
+// Design Name: 
+// Module Name: ts_bench
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module ts_bench(
+
+    );
+    
+    
+        
+    logic a;
+    logic b;
+    logic bin;
+    logic s;
+    logic cout;
+second DUT( .a(a),
+           .b(b),
+           .bin(bin),
+           .s(s),
+           .cout(cout));
+initial begin
+    a = 0; b=0; bin=0; #10;
+    a = 0; b=0; bin=1; #10;
+    a = 0; b=1; bin=0; #10;
+    a = 0; b=1; bin=1; #10;
+    
+    a = 1; b=0; bin=0; #10;
+    a = 1; b=0; bin=1; #10;
+    a = 1; b=1; bin=0; #10;
+    a = 1; b=1; bin=1; #10;
+    $finish;
+
+end;   
+endmodule
