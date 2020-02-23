@@ -14,4 +14,6 @@ case(sel)
    3'b101 : q = in[5];
    3'b110 : q = in[6];
    3'b111 : q = in[7];
+    
+endcase
 endmodule
