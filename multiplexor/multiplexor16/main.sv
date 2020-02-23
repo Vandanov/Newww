@@ -1,17 +1,26 @@
-module mul4(
+module muxer2(
+    input [2:0] in,
+    input [1:0] sel,
+    output logic q
+    );
+
+module mux4(
     input [3:0] in,
     input [2:0] sel,
     output logic q
     );
     
-always_comb
-case(sel)
-   3'b000 : q = in[0];
-   3'b001 : q = in[1];
-   3'b010 : q = in[2];
-   3'b011 : q = in[3];
-   3'b100 : q = in[4];
-   3'b101 : q = in[5];
-   3'b110 : q = in[6];
-   3'b111 : q = in[7];
+logic [1:0] m;
+genvar i;
+generate
+    for(i=0; i < 2; i=i+1)
+    begin: mux
+        muxer2 mux(.in(in[i*2+1:i*2]), .sel(sel[0]), .q(m[i]));
+    end
+endgenerate
+    
+// muxer2 mux0(.in(in[1:0]), .sel(sel[0]), .q(m[0]));
+// muxer2 mux1(.in(in[3:2]), .sel(sel[0]), .q(m[1]));
+// muxer2 mux1(.in(m), .sel(sel[1]), .q(q));
+    
 endmodule
