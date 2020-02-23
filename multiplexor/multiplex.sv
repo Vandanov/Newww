@@ -26,12 +26,10 @@ module mul(
     output q
     );
     
-    
-    
 assign q = !sel[2] & !sel[1] & !sel[0] & in[0]
           | !sel[2] & !sel[1] & sel[0] & in[1]
           | !sel[2] & sel[1] & !sel[0] & in[2]
-          | sel[2] & !sel[1] & !sel[0] & in[3]
+          | !sel[2] & sel[1] & sel[0] & in[3]
           | sel[2] & !sel[1] & !sel[0] & in[4]
           | sel[2] & !sel[1] & sel[0] & in[5]
           | sel[2] & sel[1] & !sel[0] & in[6]
