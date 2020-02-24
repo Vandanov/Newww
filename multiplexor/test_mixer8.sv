@@ -23,7 +23,7 @@
 module ts_mixer8();
 
     logic [7:0] in;
-    logic  [2:0]   sel;
+    logic  [3:0]   sel;
     logic       q;
     
 muxer8 DUT(.in(in), .sel(sel), .q(q));
