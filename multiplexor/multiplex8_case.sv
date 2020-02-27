@@ -1,4 +1,4 @@
-module mul(
+module muxer8(
     input [7:0] in,
     input [2:0] sel,
     output logic q
