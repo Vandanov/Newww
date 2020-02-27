@@ -22,7 +22,7 @@
 
 module mul(
     input [7:0] in,
-    input [3:0] sel,
+    input [2:0] sel,
     output q
     );
     
