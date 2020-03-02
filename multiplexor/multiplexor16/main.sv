@@ -19,8 +19,8 @@ generate
     end
 endgenerate
     
-// muxer2 mux0(.in(in[1:0]), .sel(sel[0]), .q(m[0]));
-// muxer2 mux1(.in(in[3:2]), .sel(sel[0]), .q(m[1]));
-// muxer2 mux1(.in(m), .sel(sel[1]), .q(q));
+    // muxer2 mux0(.in(in[1:0]), .sel(sel[0]), .q(m[0]));  // select first or second elem
+    // muxer2 mux1(.in(in[3:2]), .sel(sel[0]), .q(m[1])); // the same
+    // muxer2 mux2(.in(m), .sel(sel[1]), .q(q)); // select first or second pair e.g mux1 or mux0
     
 endmodule
