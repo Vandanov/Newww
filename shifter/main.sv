@@ -58,3 +58,4 @@ endcase
 //muxer4 m2(.in({in[1], in[0],in[3],in[2]}) ,.sel(shift), .q(q[2]));
 //muxer4 m3(.in({in[2], in[1],in[0],in[3]}) ,.sel(shift), .q(q[3]));
 endmodule
+-
