@@ -97,17 +97,18 @@
 //endmodule
 
 module c_gen(
-    input p[3:0],
-    input g[3:0],
+    input [3:0] p,
+    input [3:0] g,
     input cin,
-    input c[4:1],
-    input p_g,
-    input g_g
+    output [4:1] c,
+    output p_g,
+    output g_g
 );
 
 assign c[1] = g[0] |
              p[0] & cin;
- assign c[2] = g[1] 
+             
+assign c[2] = g[1] 
       | p[1] & g[0] 
       | p[1] & p[0]  & cin; //propogate
                 
@@ -122,12 +123,13 @@ assign c[4] = g[3]
             | p[3] & p[2] & g[1] 
             | p[3] & p[2] & p[1] & p[0] & cin;
 		  
- assign p_g = p[3] & p[2] & p[1] & p[0];
+assign p_g = p[3] & p[2] & p[1] & p[0];
 
 assign g_g = g[3]
      | p[3] & g[2]
      | p[3] & p[2] & g[1]
      | p[3] & p[2] & p[1] & g[0];
+     
 endmodule
 
 module adder4(
@@ -212,7 +214,7 @@ assign c[0] = cin;
 genvar i;
     generate
     for (i=0; i < 4; i=i+1)
-      begin: label
+      begin: label14
         adder4 add(.a(a[4*i+3:4*i]),
                    .b(b[4*i+3:4*i]),
                    .cin(c[i]),
@@ -267,7 +269,7 @@ assign c[0] = cin;
 genvar i;
     generate
     for (i=0; i < 4; i=i+1)
-      begin: label
+      begin: label16
         adder16 add(.a(a[16*i+15:16*i]),
                    .b(b[16*i+15:16*i]),
                    .cin(c[i]),
