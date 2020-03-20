@@ -30,7 +30,7 @@ flipflop DUT(.d(d),.clock(clock),.reset(reset),.q(q));
 
 
 
-   parameter PERIOD = 5;
+   parameter PERIOD = 10;
 
    always begin
       clock = 1'b0;
