@@ -29,7 +29,11 @@ module flipflop(
     );
     
 
-always @(posedge clock)//down -> up changes
+    always @(posedge clock or posedge reset)//down -> up changes - async 
+        
+
+// always @(posedge clock)//down -> up changes
+    
    if (reset) begin
         q<= 1'b0;// = - for wire = comb <= not
         
