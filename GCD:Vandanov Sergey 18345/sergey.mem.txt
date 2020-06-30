@@ -1,0 +1,32 @@
+00011100	// load @28 - load x to accum
+01011101	// add % to accum with y <- now in accum we have r
+00111110	// store it to r again
+00011101	// ld @29 load y to accum
+00111100	// store accum to @28 (x = y)
+00011110	// load @30 - load r to accum
+00111101	// store accum to @29 (y = r)
+00011101	// load @29 - load y to check
+10000000	// br #00 if y!=0
+00011100	// ld @28 (load x to write)
+00111111	// st @31 //store x in result 
+10100000	// ht
+10100000	// ht
+10100000	// ht
+10100000	// ht
+10100000	// ht
+10100000	// ht
+10100000	// ht
+10100000	// ht
+10100000	// ht
+10100000	// ht
+10100000	// ht
+10100000	// ht
+10100000	// ht
+10100000	// ht
+10100000	// ht
+10100000	// ht
+10100000	// ht
+00001010	// x @28 - x,y - our numbers which gcd we want to calculate
+00010100	// y @29
+00000000	// r @30 - let it be result of operation x%y
+00000000	// Result @31 - our answer
